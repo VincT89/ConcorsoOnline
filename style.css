@@ -50,9 +50,14 @@ p {
     background-color: black;
     color: white;
     padding: 1vw;
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .screen {
     height: auto;
     padding: 1vw;
+    
 }
+
