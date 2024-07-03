@@ -12,7 +12,7 @@ function choice() {
             div.classList.add("screen");
             for (let i = 0; i < partecipanti.length; i++) {
                 let partecipante = document.createElement("p");
-                partecipante.innerHTML += "#" + (i + 1) + " Nome: " + partecipanti[i] + "<br>Voti: " + voti[i];
+                partecipante.innerHTML += (i + 1) + ".  " + partecipanti[i];
                 div.appendChild(partecipante);
             }
             screen.appendChild(div);
