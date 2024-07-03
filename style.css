@@ -46,3 +46,13 @@ h1, h2 {
 p {
   color: #666;
 }
+.java {
+    background-color: black;
+    color: white;
+    padding: 1vw;
+}
+
+.screen {
+    height: auto;
+    padding: 1vw;
+}
