@@ -54,6 +54,9 @@ p {
     font-optical-sizing: auto;
     font-style: normal;
 }
+.java p{
+    color:white;
+}
 
 .screen {
     height: auto;
