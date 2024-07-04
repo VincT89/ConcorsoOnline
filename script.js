@@ -5,7 +5,7 @@ let partecipanti = [
 	"Paolo Neri",
 	"Luca Russo",
 ]; //array partecipanti
-let voti = [0, 0, 0, 0, 0]; //array voti
+let voti = JSON.parse(sessionStorage.getItem("voti")) || [0, 0, 0, 0, 0];
 let div = document.getElementById("choice-div"); //variabile per gestire più comodamente la finta schermata java
 function choice() {
 	let screen = document.getElementById("screen");
@@ -72,8 +72,10 @@ function vota() {
 	} else {
 		voti[voto]++;
 		votoRegistrato.textContent = "Il voto è stato registrato";
+		sessionStorage.setItem("voti", JSON.stringify(voti));
 	}
 	div.appendChild(votoRegistrato);
+	
 }
 
 //risultati e statistiche
@@ -94,8 +96,7 @@ function gestore() {
 		"Paolo Neri",
 		"Luca Russo",
 	];
-	let voti = [5, 3, 12, 2, 8]; // Esempio di voti raccolti
-
+		let voti = JSON.parse(sessionStorage.getItem("voti")) || [0, 0, 0, 0, 0];
 	switch (scelta) {
 		case "1":
 			// Aggiornamento del DOM con i risultati
