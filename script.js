@@ -37,7 +37,7 @@ function choice() {
             div.classList.add("java");
             div.classList.add("screen");
             let paragrafo = document.createElement("p");
-            paragrafo.innerText = "Sezione per il gestore dell'applicativo: qui si potranno inserire nuovi partecipanti, vedere i risultati e le statistiche.";
+            paragrafo.innerText = `Sezione per il gestore dell'applicativo: qui si potranno inserire nuovi partecipanti, vedere i risultati e le statistiche. Andare nella pagina "Risultati" per vederne il funzionamento`;
             div.appendChild(paragrafo);
             break;
         default:
