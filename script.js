@@ -5,6 +5,7 @@ function choice() {
     let screen = document.getElementById("screen")
     let choice = parseInt(document.getElementById("choice").value);
     document.getElementById("choice").value = "";
+    document.getElementById("message").textContent = ""
     switch (choice) {
         case 1:
         //gestione dei due casi: la prima se l'utente deve ancora votare, la seconda se ha già votato
