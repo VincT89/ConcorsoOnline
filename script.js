@@ -1,4 +1,4 @@
-let partecipanti = JSON.parse(sessionStorage.getItem("partecipanti")) || [
+let partecipanti = JSON.parse(sessionStorage.getItem("partecipanti")) || [//La variabile partecipanti inizia come un array di cinque nomi, ma si aggiorna man mano grazie al sessionStorage
     "Mario Rossi",
     "Luigi Bianchi",
     "Giovanni Verdi",
@@ -150,23 +150,33 @@ function gestore() {
 
                 // Event listener per il bottone
                 bottoneAggiungi.addEventListener("click", function () {
-                    var nomePartecipante = inputPartecipante.value;
-                    if (nomePartecipante) {
-                        partecipanti.push(nomePartecipante);
-                        voti.push(0);
-                        alert("Partecipante aggiunto con successo!");
+                var nomePartecipante = inputPartecipante.value;
+                let giaPresente = false;//check per evitare nomi ripetuti
+                for (let i = 0; i < partecipanti.length; i++) {
+                    if (nomePartecipante.toLowerCase() === partecipanti[i].toLowerCase()) {
+                        giaPresente = true;
+                        break;
+                    }
+                }
+                if (giaPresente) {
+                    alert(nomePartecipante + " è già nel database!");
+                } else if (nomePartecipante) {
+                    partecipanti.push(nomePartecipante);
+                    voti.push(0);
+                    alert("Partecipante aggiunto con successo!");
 
-                        // Aggiornamento del DOM con i risultati
-                        let risultatiDiv = document.getElementById("risultati");
-                        risultatiDiv.innerHTML = "";
-                        partecipanti.forEach((partecipante, index) => {
-                            let p = document.createElement("p");
-                            p.textContent = `${partecipante}: ${voti[index]} voti`;
-                            risultatiDiv.appendChild(p);
-                            sessionStorage.setItem("partecipanti", JSON.stringify(partecipanti));
-                        });
+                    // Aggiornamento del DOM con i risultati
+                    let risultatiDiv = document.getElementById("risultati");
+                    risultatiDiv.innerHTML = "";
+                    partecipanti.forEach((partecipante, index) => {
+                    let p = document.createElement("p");
+                    p.textContent = `${partecipante}: ${voti[index]} voti`;
+                    risultatiDiv.appendChild(p);
+                    sessionStorage.setItem("partecipanti", JSON.stringify(partecipanti));
+
+                       });
                     } else {
-                        alert("Inserisci un nome valido per il partecipante.");
+                       alert("Inserisci un nome valido per il partecipante.");
                     }
                 });
             }
