@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Risultati Votazione</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Concorso di Votazione Online</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="risultati.html">Risultati</a></li>
+                <li><a href="sviluppatori.html">Gli Sviluppatori</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="funzionamento">
+        <h2>Funzionamento del Sistema di Visualizzazione dei risultati per il Gestore</h2>
+        <p>Sottomenù riservato al gestore per poter visualizzare i risultati delle votazioni e le statistiche.</p>
+        <div class="java screen">
+            <p class="tutorial-color" id="tutorial">Questa è la schermata che il gestore vedrà davanti a sè:
+                permettendogli di vedere i risultati delle votazioni e una piccola statistica dei voti.</p>
+            <p>
+                Seleziona un'opzione:<br />
+                1. Visualizza i risultati della votazione<br />
+                2. Visualizza le statistiche<br />
+                ---------------------------------------------------------------<br />
+            </p>
+            <input id="choice" type="number" class="java" />
+            <button class="java" onclick="gestore()">Selezione</button>
+            <p id="message"></p>
+        </div>
+        <div class="java screen">
+            <h1>Risultati Votazione</h1>
+            <div id="risultati" class="java screen"></div>
+            <div id="statistiche" class="java screen"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
