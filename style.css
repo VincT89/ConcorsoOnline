@@ -35,7 +35,7 @@ section {
   box-shadow: 0 0 5px #ccc;
 }
 
-section#descrizione, section#partecipanti {
+section#descrizione, section#partecipanti, section#funzionamento{
   margin: 20px 5%;
 }
 
