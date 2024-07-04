@@ -72,7 +72,7 @@ function gestore() {
     divRisultati.innerHTML = '';
     divStatistiche.innerHTML = '';
 
-     // Supponendo che questi dati vengano da qualche parte (es. localStorage, database, ecc.)
+    
      let partecipanti = ["Mario Rossi", "Luigi Bianchi", "Giovanni Verdi", "Paolo Neri", "Luca Russo"];
     let voti = [5, 3, 12, 2, 8]; // Esempio di voti raccolti
     
@@ -88,7 +88,7 @@ function gestore() {
             break;
     
         case '2':
-            // Supponendo che i dati dei partecipanti e dei voti siano già stati definiti in precedenza
+          
             let maxVoti = Math.max(...voti);
             let vincitore = partecipanti[voti.indexOf(maxVoti)];
             let totaleVoti = voti.reduce((a, b) => a + b, 0);
