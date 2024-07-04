@@ -1,12 +1,18 @@
-let partecipanti = ["Mario Rossi", "Luigi Bianchi", "Giovanni Verdi", "Paolo Neri", "Luca Russo"];
-let voti = [0, 0, 0, 0, 0];
-let div = document.getElementById("choice-div");
+let partecipanti = ["Mario Rossi", "Luigi Bianchi", "Giovanni Verdi", "Paolo Neri", "Luca Russo"];//array partecipanti
+let voti = [0, 0, 0, 0, 0];//array voti
+let div = document.getElementById("choice-div");//variabile per gestire più comodamente la finta schermata java
 function choice() {
     let screen = document.getElementById("screen")
     let choice = parseInt(document.getElementById("choice").value);
     document.getElementById("choice").value = "";
     switch (choice) {
         case 1:
+        //gestione dei due casi: la prima se l'utente deve ancora votare, la seconda se ha già votato
+            if (voti.reduce(function (total, amount) { return total + amount; }, 0) == 0) {
+                document.getElementById("tutorial").textContent = `L'utente potrà qui vedere i partecipanti, e scegliere per chi votare. Scegli chi vuoi, memorizza il suo numero e poi premi 2 per andare nella sezione "vota".`
+            } else {
+                document.getElementById("tutorial").textContent = `Il voto è stato registrato correttamente: sarà però visibile soltanto al gestore.`
+            }
             div.innerHTML = "";
             div.classList.add("java");
             div.classList.add("screen");
@@ -18,6 +24,7 @@ function choice() {
             screen.appendChild(div);
             break;
         case 2:
+            document.getElementById("tutorial").textContent = `Inserisci il numero del partecipante che hai scelto per votare`
             div.innerHTML = "";
             div.classList.add("java");
             div.classList.add("screen");
@@ -25,9 +32,7 @@ function choice() {
             screen.appendChild(div);
             break;
         case 3:
-            if (document.getElementById("choice-div") != null) {
-                document.getElementById("choice-div").remove;
-            }
+            document.getElementById("tutorial").textContent = "";
             div.innerHTML = "";
             div.classList.add("java");
             div.classList.add("screen");

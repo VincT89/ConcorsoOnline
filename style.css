@@ -57,6 +57,9 @@ p {
 .java p{
     color:white;
 }
+.tutorial-color{
+    color: #00ee00!important;
+}
 
 .screen {
     height: auto;
