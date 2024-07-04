@@ -57,3 +57,47 @@ function vota() {
     div.appendChild(votoRegistrato);
 
 }
+
+
+//risultati e statistiche
+
+function gestore() {
+    var scelta = document.getElementById("choice").value; // Raccoglie l'input dell'utente
+    var divRisultati = document.getElementById("risultati");
+    var divStatistiche = document.getElementById("statistiche");
+
+    // Pulisce i div prima di visualizzare nuovi contenuti
+    divRisultati.innerHTML = '';
+    divStatistiche.innerHTML = '';
+
+     // Supponendo che questi dati vengano da qualche parte (es. localStorage, database, ecc.)
+     let partecipanti = ["Mario Rossi", "Luigi Bianchi", "Giovanni Verdi", "Paolo Neri", "Luca Russo"];
+    let voti = [5, 3, 12, 2, 8]; // Esempio di voti raccolti
+    
+    switch(scelta) {
+        case '1':
+            // Aggiornamento del DOM con i risultati
+            let risultatiDiv = document.getElementById('risultati');
+            partecipanti.forEach((partecipante, index) => {
+                let p = document.createElement('p');
+                p.textContent = `${partecipante}: ${voti[index]} voti`;
+                risultatiDiv.appendChild(p);
+            });
+            break;
+    
+        case '2':
+            // Supponendo che i dati dei partecipanti e dei voti siano già stati definiti in precedenza
+            let maxVoti = Math.max(...voti);
+            let vincitore = partecipanti[voti.indexOf(maxVoti)];
+            let totaleVoti = voti.reduce((a, b) => a + b, 0);
+    
+            // Aggiornamento del DOM con le statistiche
+            let statisticheDiv = document.getElementById('statistiche');
+            let statisticheContent = `
+                <p>Vincitore: ${vincitore} con ${maxVoti} voti</p>
+                <p>Totale voti: ${totaleVoti}</p>
+            `;
+            statisticheDiv.innerHTML = statisticheContent;
+            break;
+    }
+}
