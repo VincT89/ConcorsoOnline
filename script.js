@@ -42,6 +42,7 @@ function choice() {
             div.appendChild(paragrafo);
             break;
         default:
+            div.innerHTML = "";
             document.getElementById("message").textContent = "Per favore, inserisci un numero valido."
     }
 }
