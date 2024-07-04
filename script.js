@@ -9,7 +9,7 @@ function choice() {
         case 1:
         //gestione dei due casi: la prima se l'utente deve ancora votare, la seconda se ha già votato
             if (voti.reduce(function (total, amount) { return total + amount; }, 0) == 0) {
-                document.getElementById("tutorial").textContent = `L'utente potrà qui vedere i partecipanti, e scegliere per chi votare. Scegli chi vuoi, memorizza il suo numero e poi premi 2 per andare nella sezione "vota".`
+                document.getElementById("tutorial").textContent = `L'utente potrà qui vedere i partecipanti. Sceglierà il candidato che vorrà votare, e poi inserirà nel terminale il numero 2 per andare nella sezione "vota"`
             } else {
                 document.getElementById("tutorial").textContent = `Il voto è stato registrato correttamente: sarà però visibile soltanto al gestore.`
             }
@@ -24,7 +24,7 @@ function choice() {
             screen.appendChild(div);
             break;
         case 2:
-            document.getElementById("tutorial").textContent = `Inserisci il numero del partecipante che hai scelto per votare`
+            document.getElementById("tutorial").textContent = `L'utente inserirà il numero associato al partecipante che intende votare`
             div.innerHTML = "";
             div.classList.add("java");
             div.classList.add("screen");
