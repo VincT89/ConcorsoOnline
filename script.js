@@ -171,7 +171,8 @@ function gestore() {
                     partecipanti.forEach((partecipante, index) => {
                     let p = document.createElement("p");
                     p.textContent = `${partecipante}: ${voti[index]} voti`;
-                    risultatiDiv.appendChild(p);
+                        risultatiDiv.appendChild(p);
+                        sessionStorage.setItem("voti", JSON.stringify(voti));
                     sessionStorage.setItem("partecipanti", JSON.stringify(partecipanti));
 
                        });
